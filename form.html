@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add/Edit Employee</title>
+    <link rel="stylesheet" href="static/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Add / Edit Employee</h2>
+      <form id="employeeForm">
+        <label>First Name:<input type="text" id="firstName" required /></label>
+        <label>Last Name:<input type="text" id="lastName" required /></label>
+        <label>Email:<input type="email" id="email" required /></label>
+        <label>Department:<input type="text" id="department" required /></label>
+        <label>Role:<input type="text" id="role" required /></label>
+        <button type="submit">Save</button>
+      </form>
+      <a href="dashboard.ftlh">Back to Dashboard</a>
+    </div>
+
+    <script>
+      document
+        .getElementById("employeeForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert("Form submitted");
+        });
+    </script>
+  </body>
+</html>

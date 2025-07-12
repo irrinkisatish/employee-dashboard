@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Directory</title>
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Employee Directory</h1>
+      <div class="actions">
+        <input type="text" id="searchBar" placeholder="Search by name or email...">
+        <button onclick="openFilter()">Filter</button>
+        <a href="form.html" class="btn-primary">Add Employee</a>
+      </div>
+    </header>
+
+    <div class="filter-panel" id="filterPanel">
+      <label>First Name: <input type="text" id="filterFirstName"></label>
+      <label>Department:
+        <select id="filterDepartment">
+          <option value="">All</option>
+          <option value="HR">HR</option>
+          <option value="Engineering">Engineering</option>
+          <option value="Sales">Sales</option>
+        </select>
+      </label>
+      <label>Role:
+        <select id="filterRole">
+          <option value="">All</option>
+          <option value="Manager">Manager</option>
+          <option value="Developer">Developer</option>
+          <option value="Executive">Executive</option>
+        </select>
+      </label>
+      <button onclick="applyFilters()">Apply</button>
+      <button onclick="closeFilter()">Close</button>
+    </div>
+
+    <div class="employee-list" id="employeeList">
+        <div class="employee-card">
+          <p><strong>ID:</strong> 1</p>
+          <p><strong>Name:</strong> John Doe</p>
+          <p><strong>Email:</strong> john.doe@example.com</p>
+          <p><strong>Department:</strong> HR</p>
+          <p><strong>Role:</strong> Manager</p>
+          <div class="card-actions">
+            <a href="form.html?id=1" class="edit">Edit</a>
+            <button onclick="deleteEmployee(1)" class="delete">Delete</button>
+          </div>
+        </div>
+        <div class="employee-card">
+          <p><strong>ID:</strong> 2</p>
+          <p><strong>Name:</strong> Jane Smith</p>
+          <p><strong>Email:</strong> jane.smith@example.com</p>
+          <p><strong>Department:</strong> Engineering</p>
+          <p><strong>Role:</strong> Developer</p>
+          <div class="card-actions">
+            <a href="form.html?id=2" class="edit">Edit</a>
+            <button onclick="deleteEmployee(2)" class="delete">Delete</button>
+          </div>
+        </div>
+        <div class="employee-card">
+          <p><strong>ID:</strong> 3</p>
+          <p><strong>Name:</strong> Alice Johnson</p>
+          <p><strong>Email:</strong> alice.johnson@example.com</p>
+          <p><strong>Department:</strong> Sales</p>
+          <p><strong>Role:</strong> Executive</p>
+          <div class="card-actions">
+            <a href="form.html?id=3" class="edit">Edit</a>
+            <button onclick="deleteEmployee(3)" class="delete">Delete</button>
+          </div>
+        </div>
+    </div>
+
+    <footer>
+      <label for="pageSize">Page Size:</label>
+      <select id="pageSize" onchange="changePageSize()">
+        <option>10</option>
+        <option>25</option>
+        <option>50</option>
+        <option>100</option>
+      </select>
+    </footer>
+  </div>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
